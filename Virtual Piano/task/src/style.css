@@ -10,7 +10,6 @@ body {
 }
 
 .container {
-    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +23,8 @@ kbd {
     height: 280px;
     background: white;
     color: black;
+    font-size: 20px;
+    font-weight: bold;
     border: 1px solid black;
     justify-content: center;
     align-items: center;
