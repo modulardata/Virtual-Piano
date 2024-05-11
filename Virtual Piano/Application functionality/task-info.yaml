@@ -1,0 +1,14 @@
+type: edu
+files:
+  - name: src/index.html
+    visible: true
+    learner_created: false
+  - name: src/style.css
+    visible: true
+    learner_created: false
+  - name: hstest/test.js
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/projects/101/stages/558/implement#comment
+status: Solved
+record: 2
