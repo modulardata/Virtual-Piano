@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #366141;
+}
+
+.container {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+kbd {
+    display: flex;
+    width: 80px;
+    height: 280px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}

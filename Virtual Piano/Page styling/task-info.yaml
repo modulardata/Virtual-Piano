@@ -11,4 +11,8 @@ files:
     learner_created: true
 feedback_link: https://hyperskill.org/projects/101/stages/557/implement#comment
 status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Sat, 11 May 2024 10:38:23 UTC"
 record: 1
