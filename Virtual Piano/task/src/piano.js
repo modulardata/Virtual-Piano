@@ -4,36 +4,39 @@
 //
 //         document.addEventListener("keydown", this.handleKeyPressDown.bind(this));
 //     }
-//     handleKeyPressDown(ev) {
-//         const key = ["a", "s", "d", "f", "g", "h", "j"];
-//         if (key.includes(ev.key)) {
-//             console.log(`The '${ev.key.toUpperCase()}' key is pressed.`);
-//         } else {
+//     async handleKeyPressDown(ev) {
+//         if (!"asdfghj".includes(ev.key)) {
 //             console.warn("Warning");
+//             return;
 //         }
+//         const key = ev.key.toUpperCase();
+//
+//         const audio = new Audio(`./sounds/${key}.mp3`);
+//         await audio.play();
+//         audio.remove();
 //     }
 // }
 //
 // const piano = new Piano(document.querySelector(".container"));
 
-//
-// const validInputs = ["A","S","D","F","G","H","J","a","s","d","f","g","h","j"]
-//
-// document.addEventListener("keydown", function (event){
-//     if (validInputs.includes(event.key)) {
-//
-//         console.log("The '" + event.key.toUpperCase()  + "' key is pressed.")
-//     }
-//     else {
-//         console.warn("This is a warning!")
-//     }
-// })
+document.addEventListener("DOMContentLoaded", event => {
+    const keys = ['A', 'S', 'D', 'F', 'G', 'H', 'J'];
+    const container = document.querySelector('.container');
 
+    for (let k of keys) {
+        let key = document.createElement('kbd');
+        key.textContent = k;
+        container.appendChild(key);
+    }
 
-let keyCodes = ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ']
+    document.addEventListener("keypress", e => {
+        let char = e.code.charAt(3);
 
-document.addEventListener("keydown", function(event) {
-	keyCodes.includes(event.code)
-			? console.log(`The '${event.key.toUpperCase()}' key is pressed`)
-			: console.warn('An unregistered key is pressed');
+        if (keys.includes(char)) {
+            let audio = new Audio(`sounds/${char}.mp3`);
+            audio.play();
+        } else
+            console.log("Error: press a valid key!");
+    });
 });
+
