@@ -1,19 +1,14 @@
-class Piano {
-    constructor(containerEl) {
-        this.containerEl = containerEl;
+document.addEventListener("DOMContentLoaded", () => {
+    const validKeys = new Set('AWSEDFTGYHUJ')
 
-        document.addEventListener("keydown", this.handleKeyPressDown.bind(this));
-    }
-    async handleKeyPressDown(ev) {
-        if (!"adefghjstuwy".includes(ev.key)) {
-            return;
+    document.addEventListener('keydown', (event) => {
+        const key = event.key.toUpperCase()
+        if (!validKeys.has(key)) {
+            return
         }
-        const key = ev.key.toUpperCase();
-
-        const audio = new Audio(`sounds/${key}.mp3`);
-        await audio.play();
-        audio.remove();
-    }
-}
-
-const piano = new Piano(document.querySelector(".container"));
+        const audio = new Audio(`sounds/${key}.mp3`)
+        audio.currentTime = 0
+        audio.play()
+    })
+    
+})
